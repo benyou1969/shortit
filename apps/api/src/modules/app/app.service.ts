@@ -13,6 +13,7 @@ export class AppService {
   }
 
   async shortUrl(fullUrl: string) {
+    console.log(fullUrl);
     const shortedUrl = await this.shortUrlRepository
       .create({
         OriginalUrl: fullUrl,

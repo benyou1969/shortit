@@ -13,6 +13,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
+  app.enableCors({ origin: 'http://localhost:4200' });
   const port = process.env.PORT || 3333;
   console.log(await shortId.generate());
   await app.listen(port, () => {
